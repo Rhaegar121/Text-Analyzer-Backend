@@ -1,4 +1,4 @@
 CarrierWave.configure do |config|
-    config.storage = :file
-    config.enable_processing = false
-  end
+  config.storage = :file
+  config.enable_processing = false
+end

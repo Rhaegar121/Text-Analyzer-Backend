@@ -8,7 +8,7 @@ class Api::TextAnalysisController < ApplicationController
       content = uploaded_file.read
       words = content.downcase.split(/\s+/)
       word_count = words.group_by(&:itself).transform_values(&:count)
-      
+
       render json: word_count
     else
       render json: { error: 'No file uploaded' }, status: :bad_request
