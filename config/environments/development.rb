@@ -59,6 +59,13 @@ Rails.application.configure do
   # Suppress logger output for asset requests.
   config.assets.quiet = true
 
+  config.middleware.insert_before 0, Rack::Cors do
+    allow do
+      origins 'http://127.0.0.1:5173'
+      resource '*', headers: :any, methods: [:get, :post, :put, :patch, :delete, :options]
+    end
+  end
+
   # Raises error for missing translations.
   # config.i18n.raise_on_missing_translations = true
 
